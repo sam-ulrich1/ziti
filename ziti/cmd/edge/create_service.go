@@ -54,7 +54,7 @@ func newCreateServiceCmd(out io.Writer, errOut io.Writer) *cobra.Command {
 
 	// allow interspersing positional args and flags
 	cmd.Flags().SetInterspersed(true)
-	cmd.Flags().StringSliceVarP(&options.roleAttributes, "role-attributes", "a", nil, "Role attributes of the new service")
+	cmd.Flags().StringSliceVarP(&options.roleAttributes, "role-attributes", "a", nil, "CSV of role attributes for the new service")
 	cmd.Flags().StringSliceVarP(&options.configs, "configs", "c", nil, "Configuration id or names to be associated with the new service")
 	cmd.Flags().StringVar(&options.terminatorStrategy, "terminator-strategy", "", "Specifies the terminator strategy for the service")
 	if err := options.encryption.Set("ON"); err != nil {
